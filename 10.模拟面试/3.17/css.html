@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+        .box {
+            margin: 50px auto;
+            height: 100px;
+            width: 100px;
+            border: 1px solid #ddd;
+        }
+        .sun {
+            height: 50px;
+            width: 50px;
+            background: pink;
+        }
+        .wrap1 {
+            position: relative;
+        }
+
+        .inner1 {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
+        }
+        .wrap2 {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="box wrap1">
+        <div class="sun inner1">1</div>
+    </div>
+    <div class="box wrap2">
+        <div class="sun inner">2</div>
+    </div>
+    <div class="box wrap3">
+        <div class="sun inner">3</div>
+    </div>
+    <div class="box wrap4">
+        <div class="sun inner">4</div>
+    </div>
+    <div class="box wrap5">
+        <div class="sun inner">5</div>
+    </div>
+</body>
+</html>
