@@ -1,0 +1,8 @@
+```js
+class Promise {
+  constructor() {
+    
+  }
+}
+```
+
