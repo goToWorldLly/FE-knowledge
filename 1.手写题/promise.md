@@ -1,3 +1,6 @@
+## promise
+
+```js
 /**
  * Promise
  */
@@ -80,68 +83,5 @@ class Promise {
     }
 
 }
+```
 
-
-
-
-
-
-
-
-
-
-
-// class Promise {
-
-//     state = 'pending';
-//     value = null;
-//     callbacks = [];
-
-//     constructor(fn) {
-//         fn(this.resolve.bind(this));
-//     }
-
-
-//     handle({onFulfilled, resolve}) {
-//         if(this.state === 'fulfilled') {
-//             this.callbacks.push({
-//                 onFulfilled,
-//                 resolve
-//             });
-//             return;
-//         }
-
-//         if(!onFulfilled) {
-//             resolve(this.value);
-//             return;
-//         }
-//         const result = onFulfilled(this.value);
-//         resolve(result)
-//     }
-
-//     resolve(onFulfilled) {
-//         return new Promise(resolve => {
-//             this.handle(onFulfilled, resolve)
-//         })
-//     }
-
-//     resolve(value) {
-
-//         if(
-//             value
-//             && typeof value === 'object'
-//             || typeof value === 'function'
-//         ) {
-//             const then = value.then;
-//             if(typeof then === 'function') {
-//                 then.call(value, this.resolve.bind(this))
-//             }
-//             return;
-//         }
-
-//         this.state = 'fulfilled';
-//         this.value = value;
-//         this.callbacks.forEach(callback => this.handle(callback));
-//     }
-
-// }

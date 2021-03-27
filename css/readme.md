@@ -1,8 +1,5 @@
-```js
-class Promise {
-  constructor() {
-    
-  }
-}
-```
-
+1. 两列布局、三列布局
+2. 盒模型
+3. BFC
+4. 块级元素居中
+5. flex

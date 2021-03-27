@@ -2,7 +2,27 @@
 
 解析url
 
+```js
+function queryString(url) {
+  	return url.replace(/^.*\?/,'')
+  		.split('&')
+  		.reduce((acc, curr) => {
+      	const [key, val] = curr.split('=')
+        return {
+          ...acc,
+          [key]: val
+        }
+    }, {})
+}
+```
+
 正则 驼峰转换
+
+```js
+
+```
+
+
 
 千分位
 
@@ -15,4 +35,6 @@ function qianfen(num) {
     })
 }
 ```
+
+
 
