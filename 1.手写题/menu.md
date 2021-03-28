@@ -1,8 +1,4 @@
-
-
-
-
-#### 手写题
+## 清单-没事就写写
 
 1. call √
 2. apply √
@@ -17,7 +13,7 @@
 11. debounce √
 12. throttle √
 13. class √
-14. EventBus 
+14. EventBus √
 15. Object.create √
 
 
