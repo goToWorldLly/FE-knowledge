@@ -48,46 +48,23 @@ function Instanceof(left, right) {
 
 
 ## deepClone
+https://segmentfault.com/a/1190000020255831
 
 ```js
-function isPrimitive(value) {
-  return ['string','number','boolean','symbol'].includes(typeof value);
-}
 
-function isObject(val) {
-  	return Object.prototype.toString.call(val) === '[object Object]';
-}
-
-function deepClone(value) {
-  	let mome = {};
-  	function inner(value) {
-      	let res;
-      	if(isPrimitive(value)){
-           	return value;
-        }else if(Array.isArray(value)) {
-             res = [...value]
-        }else if(isObject(value)) {
-             res = {...value}    
-        }
-      
-      	Reflect.ownKeys(res).forEach(key => {
-          	const val = res[key];
-          	if(typeof  val=== 'object' && val !== null) {
-              	//此处我们用memo来记录已经被拷贝过的引用地址。以此来解决循环引用的问题
-               	if(mome[val]) {
-                   	res[key] = mome[val]
-                }
-                else{
-                    mome[val] = val;
-                  	res[key] = inner(val)
-                }
-            }
-        })
-      	
-      	return res;
+function deepClone(data, map = new WeekMap()) {
+  	if(typeof data !== 'object') {
+          return data
     }
-  
-  	return inner(value)
+    let cloneTarget = Array.isArray(data) ? [] : {}
+    if(map.get(data)) {
+        return map.get(data);
+    }
+    map.set(data, cloneTarget);
+    for(key in data) {
+        cloneTarget[key] = deepClone(data[key], map)
+    }
+    return cloneTarget;
 }
 
 补充知识：
