@@ -111,7 +111,7 @@ function curry(fn, ...args) {
         length = fn.length,
         argArr = args || [];
     return function(...innerArgs) {
-        argArr.push(innerArgs);
+        argArr.push(...innerArgs);
         if(argArr.length >= length) {
             return fn.apply(that, argArr)
         }

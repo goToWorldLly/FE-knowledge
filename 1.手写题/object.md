@@ -143,13 +143,13 @@ function stringify(value) {
         case '[object Object]':
             result += '{';
             for(key in value) {
-                if(!value.hasOwnProperty(key)) return;
+                if(!value.hasOwnProperty(key)) continue;
                 curVal = stringify(value[key]);
                 if(curVal !== undefined) {
-                    result += `"${key}":${value[key]}`
+                    result += `"${key}":${value[key]},`
                 }
             }
-            if(result !== '[') {
+            if(result !== '') {
                 result = result.slice(0, -1);
             }
             return result;
@@ -165,4 +165,10 @@ function stringify(value) {
 
 
 ## JSON.parse
+
+```js
+function parse(string) {
+	return eval('('+string+')')
+}
+```
 
